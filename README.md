@@ -13,7 +13,7 @@ The program also uses [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to
 ### Program arguments
 
 * `-i` or `--input`: path to dir with java source code files to psi extraction;
-* `-o` or `--output`: path to dir in which will be written psi trees.
+* `-o` or `--output`: path to dir in which will be written psi trees (as json).
 
 ### How to run
 
