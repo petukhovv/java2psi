@@ -1,4 +1,4 @@
-# java-psi-extractor
+# java2psi
 
 PSI tree extraction from java source code
 
