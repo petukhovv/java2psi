@@ -1,4 +1,4 @@
-package org.jetbrains.psi
+package org.jetbrains.java2psi
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject

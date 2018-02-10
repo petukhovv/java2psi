@@ -1,4 +1,4 @@
-package org.jetbrains.psi.infrastructure
+package org.jetbrains.java2psi.infrastructure
 
 import com.intellij.lang.Language
 import com.intellij.lang.LanguageParserDefinitions

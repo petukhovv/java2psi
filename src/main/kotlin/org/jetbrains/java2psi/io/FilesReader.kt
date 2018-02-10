@@ -1,4 +1,4 @@
-package org.jetbrains.psi.io
+package org.jetbrains.java2psi.io
 
 import java.io.File
 
