@@ -15,7 +15,7 @@ The program also uses [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to
 * `-i` or `--input`: path to dir with java source code files to psi extraction;
 * `-o` or `--output`: path to dir in which will be written psi trees.
 
-### How run
+### How to run
 
 Before run program you must add a library to the project `lib/grammar-kit-2017.1.1.jar` and also make sure that you use IntelliJ IDEA Community Edition as project SDK.
 
