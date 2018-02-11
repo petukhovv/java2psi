@@ -18,15 +18,33 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'kotlin'
 
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'org.jetbrains.java2psi.MainKt'
+    }
+
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude ('META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA')
+
+    zip64 true
+}
+
 repositories {
     mavenCentral()
     jcenter()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "com.xenomachina:kotlin-argparser:2.0.4"
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0"
+    compile name: 'grammar-kit-2017.1.1'
+    compile "org.jetbrains.kotlin:kotlin-reflect:1.2.0"
+    compile fileTree(dir: '/Applications/IntelliJ IDEA CE.app/Contents', include: '**/*.jar')
 }
 
 compileKotlin {
