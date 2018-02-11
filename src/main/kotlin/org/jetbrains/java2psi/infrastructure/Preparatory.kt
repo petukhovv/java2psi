@@ -2,7 +2,7 @@ package org.jetbrains.java2psi.infrastructure
 
 import com.intellij.lang.Language
 import com.intellij.lang.LanguageParserDefinitions
-import com.intellij.lang.java.JavaParserDefinition
+import com.intellij.lang.java.custom.JavaParserDefinition
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.roots.ProjectFileIndex
 import com.intellij.openapi.roots.ProjectRootManager

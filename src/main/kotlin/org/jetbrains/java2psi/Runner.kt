@@ -15,9 +15,13 @@ class Runner {
             val psiFactory = PsiFileFactory.getInstance(project)
 
             FilesReader.run(sourcesDir, "java") { content: String, file: File ->
-                val psiFile = psiFactory.createFileFromText(language, content)
-                val jsonPsi = Psi2TypesTree.convert(psiFile)
-                FilesWriter.write(sourcesDir, psiDir, file, jsonPsi)
+                try {
+                    val psiFile = psiFactory.createFileFromText(language, content)
+                    val jsonPsi = Psi2TypesTree.convert(psiFile)
+                    FilesWriter.write(sourcesDir, psiDir, file, jsonPsi)
+                } catch (e: java.lang.StackOverflowError) {
+                    println("${file.canonicalPath} skip. JavaParserDefinition threw exception: $e")
+                }
             }
         }
     }
