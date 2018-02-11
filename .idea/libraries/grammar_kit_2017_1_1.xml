@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="grammar-kit-2017.1.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/grammar-kit-2017.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/grammar-kit-2017.1.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
