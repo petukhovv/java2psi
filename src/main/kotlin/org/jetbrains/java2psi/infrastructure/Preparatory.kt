@@ -15,18 +15,16 @@ import com.intellij.psi.impl.JavaPsiImplementationHelper
 import com.intellij.psi.impl.JavaPsiImplementationHelperImpl
 import org.intellij.grammar.LightPsi
 
-abstract class Preparatory {
-    companion object {
-        fun prepare(language: Language): Project {
-            val project = LightPsi.Init.initAppAndProject(Disposer.newDisposable())
+object Preparatory {
+    fun prepare(language: Language): Project {
+        val project = LightPsi.Init.initAppAndProject(Disposer.newDisposable())
 
-            project.registerService(JavaPsiImplementationHelper::class.java, JavaPsiImplementationHelperImpl::class.java)
-            project.registerService(ProjectRootManager::class.java, ProjectRootManagerImpl::class.java)
-            project.registerService(ProjectFileIndex::class.java, ProjectFileIndexImpl::class.java)
-            project.registerService(DirectoryIndex::class.java, DirectoryIndexImpl::class.java)
-            LightPsi.Init.addKeyedExtension(LanguageParserDefinitions.INSTANCE, language, JavaParserDefinition(), project)
+        project.registerService(JavaPsiImplementationHelper::class.java, JavaPsiImplementationHelperImpl::class.java)
+        project.registerService(ProjectRootManager::class.java, ProjectRootManagerImpl::class.java)
+        project.registerService(ProjectFileIndex::class.java, ProjectFileIndexImpl::class.java)
+        project.registerService(DirectoryIndex::class.java, DirectoryIndexImpl::class.java)
+        LightPsi.Init.addKeyedExtension(LanguageParserDefinitions.INSTANCE, language, JavaParserDefinition(), project)
 
-            return project
-        }
+        return project
     }
 }
