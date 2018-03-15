@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: :grammar-kit-2017.1.1:">
+  <library name="Gradle: org.intellij:grammar-kit-2017.1.1:2017.1.1">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/libs/grammar-kit-2017.1.1.jar!/" />
     </CLASSES>
