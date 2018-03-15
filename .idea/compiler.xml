@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="java-psi-extractor_main" target="1.8" />
       <module name="java-psi-extractor_test" target="1.8" />
+      <module name="java2psi_main" target="1.8" />
+      <module name="java2psi_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
