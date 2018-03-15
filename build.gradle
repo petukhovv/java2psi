@@ -13,7 +13,7 @@ plugins {
     id 'org.jetbrains.intellij' version '0.2.18'
 }
 
-group 'org.jetbrains'
+group 'org.jetbrains.java2psi'
 version '0.1'
 
 apply plugin: 'kotlin'
@@ -32,7 +32,7 @@ jar {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        maven(MavenPublication) {
             from components.java
         }
     }
@@ -41,11 +41,9 @@ publishing {
 repositories {
     mavenCentral()
     jcenter()
-    flatDir {
-        dirs 'libs'
-    }
 }
 
+def libs_path = 'libs'
 def intellij_platform_libs_path = '/Applications/IntelliJ IDEA CE.app/Contents'
 
 dependencies {
@@ -53,7 +51,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     compile "com.xenomachina:kotlin-argparser:2.0.4"
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0"
-    compile name: 'grammar-kit-2017.1.1'
+    compile fileTree(dir: libs_path, include: '**/*.jar')
     compile fileTree(dir: intellij_platform_libs_path, include: '**/*.jar')
 }
 
